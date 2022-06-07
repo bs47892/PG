@@ -3,7 +3,7 @@ import React from 'react';
 export default function Events(){
     return (
         <>
-        <h1 className='Events'>Events</h1>
+        <h1 className='events'>Events</h1>
         </>
     );
 }

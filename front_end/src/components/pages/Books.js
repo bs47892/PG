@@ -3,7 +3,7 @@ import React from 'react';
 export default function Books(){
     return (
         <>
-        <h1 className='Books'>Books</h1>
+        <h1 className='books'>Books</h1>
         </>
     );
 }
