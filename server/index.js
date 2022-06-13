@@ -10,7 +10,7 @@ app.listen (4000, ()=>{
 });
 
 mongoose
-.connect("mongodb://localhost:27017/SignUp_LogIn",{
+.connect("mongodb://localhost:27017/ProjektiGrupor",{
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
