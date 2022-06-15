@@ -4,6 +4,12 @@ const mongoose = require ("mongoose");
 const authRoutes = require("./Routes/AuthRoutes");
 const app =express();
 const cookieParser=require("cookie-parser");
+const router = require("./routes/book-routes");
+
+//Middlewares
+app.use(express.json());
+//app.use (cors());
+app.use("/books", router)
 
 app.listen (4000, ()=>{
     console.log("Server Started on PORT 4000");

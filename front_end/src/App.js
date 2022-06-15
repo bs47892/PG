@@ -6,13 +6,15 @@ import Accessories from "./components/pages/Accessories";
 import Authors from "./components/pages/Authors";
 import Events from "./components/pages/Events";
 import Home from "./components/pages/Home";
-import Books from "./components/pages/Books";
+import Books from "./components/Book/Books";
 import BooksInAlbanian from "./components/pages/BooksInAlbanian";
 import ForeignBooks from "./components/pages/ForeignBooks";
 import LanguageTextbooks from "./components/pages/LanguageTextbooks";
 import Login from "./components/pages/Login";
 import Register from "./components/pages/Register";
 import LogedIn from "./components/pages/LogedIn";
+import AddBook from "./components/Book/AddBook";
+import BookDetail from "./components/Book/BookDetail";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -31,6 +33,9 @@ function App() {
         <Route exact path='/login' element ={<Login />}/>
         <Route exact path='/LogedIn' element ={<LogedIn />}/>
         <Route exact path='/register' element ={<Register/>}/>
+        <Route exact path='/addbook' element ={<AddBook/>}/>
+        <Route exact path='/books/:id' element ={<BookDetail/>}/>
+
 
       </Routes>
       </Router>
