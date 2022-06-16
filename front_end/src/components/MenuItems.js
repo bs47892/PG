@@ -1,7 +1,7 @@
 export const MenuItems = [
     {
         title: 'Books in Albanian',
-        path: '/BooksInAlbanian',
+        path: '/booksinalbanian',
         cName:'dropdown-link'
     },
     {

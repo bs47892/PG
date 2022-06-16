@@ -1,0 +1,53 @@
+
+.bo ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+}
+
+.bo li{
+    padding: 10px;
+    width: 250px;
+    max-width: 250px;
+    max-height: 400px;
+}
+.card{
+    
+   padding: 5px; 
+    width: 100%;
+    height:100%;
+    box-shadow: 5px 5px 10px #ccc;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+   
+}
+.card > img{
+    width:70%;
+    height:50%;
+    padding-left: 40px;
+    
+   
+}
+.card article {
+    font-size: 80%;
+    padding:5px; 
+}
+.card h4{
+    padding: 3px;
+    
+}
+.card p{
+    font-size: smaller;
+    padding: 3px;
+}
+/* nuk me ka funksionu, e provoj me rregullu
+.bo button :hover{
+    background-color: #000811;
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+} */

@@ -5,11 +5,17 @@ const authRoutes = require("./Routes/AuthRoutes");
 const app =express();
 const cookieParser=require("cookie-parser");
 const router = require("./routes/book-routes");
+const alrouter = require ("./Routes/AlBook-routes");
+const ltrouter =require ("./Routes/LtBook-routes");
+const frouter = require ("./Routes/FBook-routes");
 
 //Middlewares
 app.use(express.json());
-//app.use (cors());
+app.use (cors());
 app.use("/books", router)
+app.use("/booksinalbanian", alrouter)
+app.use ("/languagetextbooks", ltrouter)
+app.use ("/foreignbooks", frouter)
 
 app.listen (4000, ()=>{
     console.log("Server Started on PORT 4000");
