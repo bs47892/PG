@@ -34,6 +34,7 @@ import {
           price: Number(inputs.price),
           image: String(inputs.image),
           available: Boolean(checked),
+          publisher:String(inputs.publisher)
         })
         .then((res) => res.data);
     };
@@ -108,6 +109,15 @@ import {
                 fullWidth
                 variant="outlined"
                 name="image"
+              />
+              <FormLabel>Publisher</FormLabel>
+              <TextField
+                value={inputs.publisher}
+                onChange={handleChange}
+                margin="normal"
+                fullWidth
+                variant="filled"
+                name="publisher"
               />
               <FormControlLabel
                 control={

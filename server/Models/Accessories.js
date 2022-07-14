@@ -2,12 +2,12 @@ const mongoose=require('mongoose');
 
 const Schema=mongoose.Schema;
 
-const bookSchema = new Schema({
+const accessorySchema = new Schema({
     name:{
         type: String,
         required: true
     },
-   author:{
+    brand:{
         type: String,
         required: true
     },
@@ -17,19 +17,12 @@ const bookSchema = new Schema({
     },
     price:{
         type: Number,
-        required: true,
-    },
-    available:{
-        type: Boolean,
+        required: false,
     },
     image:{
         type: String,
         required: true,
     },
-    publisher:{
-        type: String,
-        required: true
-    }
 });
 
-module.exports=mongoose.model("FBook", bookSchema);
+module.exports=mongoose.model("Accessory", accessorySchema);
