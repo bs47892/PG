@@ -2,7 +2,7 @@ import React from "react";
 import './App.css';
 import NavBar from './components/NavBar';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Accessories from "./components/pages/Accessories";
+import Accessories from "./components/pages/accessories";
 import Authors from "./components/pages/Authors";
 import Events from "./components/pages/Events";
 import Home from "./components/pages/Home";
@@ -22,6 +22,7 @@ import LtBookDetail from "./components/LtBook/LtBookDetail";
 import FAddBook from "./components/FBook/FAddBook";
 import FBookDetail from "./components/FBook/FBookDetail";
 import "react-toastify/dist/ReactToastify.css";
+
 
 function App() {
   return (

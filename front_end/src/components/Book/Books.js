@@ -28,7 +28,6 @@ const Books = () => {
             </li>
           ))}
       </ul>
-    
       <Button style={{maxWidth: '100px', maxHeight: '50px', minWidth: '100px', minHeight: '50px', marginLeft: '50%', marginTop: '100px',  color: 'white', backgroundColor: 'rgb(80, 98, 255)'}} LinkComponent={Link} to={`/addbook`} sx={{ mt: "auto" }}>
        Add Book
       </Button>

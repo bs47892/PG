@@ -10,7 +10,7 @@ module.exports.checkUser = (req, res, next) => {
       async (err, decodedToken) => {
         if (err) {
           res.json({ status: false });
-          next();
+          next('/Login');
         } else {
           const user = await User.findById(decodedToken.id);
           if (user) res.json({ status: true, user: user.email });
@@ -21,6 +21,6 @@ module.exports.checkUser = (req, res, next) => {
     );
   } else {
     res.json({ status: false });
-    next();
+    next('/Login');
   }
 };
