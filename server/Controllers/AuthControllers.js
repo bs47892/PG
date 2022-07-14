@@ -2,8 +2,8 @@ const UserModel = require("../Models/UserModel");
 const jwt = require("jsonwebtoken");
 
 const maxAge = 3 * 24 * 60 * 60;
-const createToken = (id) => {
-  return jwt.sign({ id }, "bs bs bs bs bs", {
+const createToken = (id, role) => {
+  return jwt.sign({ id, role }, "bs bs bs bs bs", {
     expiresIn: maxAge,
   });
 };
@@ -36,8 +36,8 @@ const handleErrors = (err) => {
 
 module.exports.register = async (req, res, next) => {
   try {
-    const {email, password}= req.body;
-    const user = await UserModel.create({email, password});
+    const {email, name, password}= req.body;
+    const user = await UserModel.create({email, name, password});
     const token = createToken(user._id);
    res.cookie("jwt", token, { 
      withCredentials: true,

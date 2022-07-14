@@ -4,18 +4,25 @@ const mongoose = require ("mongoose");
 const authRoutes = require("./Routes/AuthRoutes");
 const app =express();
 const cookieParser=require("cookie-parser");
-const router = require("./routes/book-routes");
+const router = require("./Routes/book-routes");
 const alrouter = require ("./Routes/AlBook-routes");
 const ltrouter =require ("./Routes/LtBook-routes");
 const frouter = require ("./Routes/FBook-routes");
+const { checkUser } = require("./Middlewares/AuthMiddlewares");
 
 //Middlewares
 app.use(express.json());
-app.use (cors());
-app.use("/books", router)
-app.use("/booksinalbanian", alrouter)
-app.use ("/languagetextbooks", ltrouter)
-app.use ("/foreignbooks", frouter)
+app.use(
+    cors({
+        origin: "http://localhost:3000",
+        method: ["GET","POST","CREATE","UPDATE","DELETE"],
+        credentials: true,
+    })
+);
+app.use("/books", router, checkUser)
+app.use("/booksinalbanian", alrouter, checkUser)
+app.use ("/languagetextbooks", ltrouter,checkUser)
+app.use ("/foreignbooks", frouter, checkUser)
 
 app.listen (4000, ()=>{
     console.log("Server Started on PORT 4000");
@@ -33,13 +40,7 @@ mongoose
     console.log(err.message);
 });
 
-app.use(
-    cors({
-        origin: ["http://localhost:3000"],
-        method: ["GET","POST"],
-        credentials: true,
-    })
-);
+
 
 
 app.use (cookieParser());

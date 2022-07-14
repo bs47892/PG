@@ -7,9 +7,17 @@ const userSchema = new mongoose.Schema({
     required: [true, "Email is Required"],
     unique: true,
   },
+  name:{
+    type: String,
+    required:[true, "Name is Required"]
+  },
   password: {
     type: String,
     required: [true, "Password is Required"],
+  },
+  role:{
+    type: String,
+    required:[false, "Role is not Required"]
   },
 });
 

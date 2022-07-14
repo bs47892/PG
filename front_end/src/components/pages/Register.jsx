@@ -12,13 +12,14 @@ export default function Register() {
     //}
   //}, [cookies, navigate]);
 
-  const [values, setValues] = useState({ email: "", password: "", });
+  const [values, setValues] = useState({ email: "", name: "", password: ""});
   
   const generateError = (err) =>
     toast.error(err, {
       position: "bottom-right",
    });
   const handleSubmit = async (e) => {
+    console.log(values)
     e.preventDefault();
     try {
       const { data } = await axios.post(
@@ -33,8 +34,9 @@ export default function Register() {
         
       if (data) {
         if (data.errors) {
-          const { email, password } = data.errors;
+          const { name, email, password } = data.errors;
           if (email) generateError(email);
+          else if (name) generateError(name)
           else if (password) generateError(password);
         } else {
          navigate("/LogedIn");
@@ -49,6 +51,14 @@ export default function Register() {
       <h2>Register an Account</h2>
       <form onSubmit={(e)=> handleSubmit(e)}>
         <div>
+          <label htmlFor="name">Name</label>
+          <input type="text" name="name" placeholder="Name"
+          onChange={(e)=> 
+          setValues({ ...values, [e.target.name]: e.target.value})
+          }
+          />
+           </div>
+           <div>
           <label htmlFor="email">Email</label>
           <input type="email" name="email" placeholder="Email"
           onChange={(e)=> 

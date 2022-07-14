@@ -34,6 +34,7 @@ import {
           price: Number(inputs.price),
           image: String(inputs.image),
           available: Boolean(checked),
+          translator: String(inputs.translator)
         })
         .then((res) => res.data);
     };
@@ -108,6 +109,15 @@ import {
                 fullWidth
                 variant="outlined"
                 name="image"
+              />
+              <FormLabel>Translator</FormLabel>
+              <TextField
+                value={inputs.translator}
+                onChange={handleChange}
+                margin="normal"
+                fullWidth
+                variant="filled"
+                name="translator"
               />
               <FormControlLabel
                 control={

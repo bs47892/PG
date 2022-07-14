@@ -19,12 +19,15 @@ const bookSchema = new Schema({
         type: Number,
         required: true,
     },
-    available:{
-        type: Boolean,
-    },
     image:{
         type: String,
         required: true,
+    },
+    available:{
+        type: Boolean,
+    },
+    translator:{
+        type: String,
     },
 });
 
