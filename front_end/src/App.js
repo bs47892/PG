@@ -8,7 +8,6 @@ import AccessoryDetail from "./components/Accessory/AccessoryDetail";
 import Authors from "./components/Author/Authors";
 import AddAuthor from "./components/Author/AddAuthor";
 import AuthorDetail from "./components/Author/AuthorDetail";
-import Events from "./components/pages/Events";
 import Home from "./components/pages/Home";
 import Books from "./components/Book/Books";
 import AlBooks from "./components/AlBook/AlBooks";
@@ -25,6 +24,9 @@ import LtAddBook from "./components/LtBook/LtAddBook";
 import LtBookDetail from "./components/LtBook/LtBookDetail";
 import FAddBook from "./components/FBook/FAddBook";
 import FBookDetail from "./components/FBook/FBookDetail";
+import Events from "./components/Event/Events";
+import AddEvent from "./components/Event/AddEvent";
+import EventDetail from "./components/Event/EventDetail";
 import "react-toastify/dist/ReactToastify.css";
 
 
@@ -38,7 +40,6 @@ function App() {
         <Route exact path='/addaccessory' element ={<AddAccessory />}/>
         <Route exact path='/accessories/:id' element ={<AccessoryDetail />}/>
         <Route exact path='/authors' element ={<Authors />}/>
-        <Route exact path='/events' element ={<Events/>}/>
         <Route exact path='/books' element ={<Books />}/>
         <Route exact path='/booksinalbanian' element ={<AlBooks />}/>
         <Route exact path='/foreignbooks' element ={<ForeignBooks />}/>
@@ -56,11 +57,9 @@ function App() {
         <Route exact path='/languagetextbooks/:id' element ={<LtBookDetail/>}/>
         <Route exact path='/faddbook' element ={<FAddBook/>}/>
         <Route exact path='/foreignbooks/:id' element ={<FBookDetail/>}/>
-        
-
-        
-
-
+        <Route exact path='/events' element ={<Events/>}/>
+        <Route exact path='/addevent' element ={<AddEvent/>}/>      
+        <Route exact path='/events/:id' element ={<EventDetail/>}/>      
       </Routes>
       </Router>
   );
