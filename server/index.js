@@ -10,6 +10,7 @@ const ltrouter =require ("./Routes/LtBook-routes");
 const frouter = require ("./Routes/FBook-routes");
 const authorRouter = require("./Routes/Author-routes")
 const accessoryRouter = require("./Routes/Accessory-routes")
+const eventRouter = require("./Routes/Event-routes")
 
 //Middlewares
 app.use(express.json());
@@ -26,6 +27,7 @@ app.use ("/languagetextbooks", ltrouter)
 app.use ("/foreignbooks", frouter)
 app.use("/authors", authorRouter)
 app.use("/accessories", accessoryRouter)
+app.use("/events", eventRouter)
 
 app.listen (4000, ()=>{
     console.log("Server Started on PORT 4000");
