@@ -1,28 +1,22 @@
 import {
     Button,
-    Checkbox,
-    FormControlLabel,
     FormLabel,
     TextField,
-    Typography,
   } from "@mui/material";
   import { Box } from "@mui/system";
   import axios from "axios";
   import React, { useState } from "react";
   import { useNavigate } from "react-router-dom";
   
-  const FAddBook = () => {
+  const AddAuthor = () => {
     const history = useNavigate();
     const [inputs, setInputs] = useState({
       name: "",
+      life: "",
       description: "",
-      price: "",
-      author: "",
-  
+      category: "",
       image: "",
-      publisher:""
     });
-    const [checked, setChecked] = useState(false);
     const handleChange = (e) => {
       setInputs((prevState) => ({
         ...prevState,
@@ -33,22 +27,20 @@ import {
   
     const sendRequest = async () => {
       await axios
-        .post("http://localhost:4000/foreignbooks", {
+        .post("http://localhost:4000/authors", {
           name: String(inputs.name),
-          author: String(inputs.author),
+          life: String(inputs.life),
           description: String(inputs.description),
-          price: Number(inputs.price),
+          category: String(inputs.category),
           image: String(inputs.image),
-          available: Boolean(checked),
-          publisher:String(inputs.publisher)
         })
         .then((res) => res.data);
     };
   
     const handleSubmit = (e) => {
       e.preventDefault();
-      console.log(inputs, checked);
-      sendRequest().then(() => history("/foreignbooks"));
+      console.log(inputs);
+      sendRequest().then(() => history("/authors"));
     };
   
     return (
@@ -73,14 +65,14 @@ import {
             variant="filled"
             name="name"
           />
-          <FormLabel>Author</FormLabel>
+          <FormLabel>Life</FormLabel>
           <TextField
-            value={inputs.author}
+            value={inputs.life}
             onChange={handleChange}
             margin="normal"
             fullWidth
             variant="filled"
-            name="author"
+            name="life"
           />
           <FormLabel>Description</FormLabel>
           <TextField
@@ -91,15 +83,15 @@ import {
             variant="filled"
             name="description"
           />
-          <FormLabel>Price</FormLabel>
+          <FormLabel>Category</FormLabel>
           <TextField
-            value={inputs.price}
+            value={inputs.category}
             onChange={handleChange}
-            type="number"
+            type="normal"
             margin="normal"
             fullWidth
             variant="filled"
-            name="price"
+            name="category"
           />
           <FormLabel>Image</FormLabel>
           <TextField
@@ -110,28 +102,12 @@ import {
             variant="filled"
             name="image"
           />
-          <FormLabel>Publisher</FormLabel>
-          <TextField
-            value={inputs.publisher}
-            onChange={handleChange}
-            margin="normal"
-            fullWidth
-            variant="filled"
-            name="publisher"
-          />
-          <FormControlLabel
-            control={
-              <Checkbox checked={checked} onChange={() => setChecked(!checked)} />
-            }
-            label="Available"
-          />
-  
           <Button variant="contained" type="submit">
-            Add Book
+            Add Author
           </Button>
         </Box>
       </form>
     );
   };
   
-  export default FAddBook;
+  export default AddAuthor;

@@ -2,8 +2,12 @@ import React from "react";
 import './App.css';
 import NavBar from './components/NavBar';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
-import Accessories from "./components/pages/accessories";
-import Authors from "./components/pages/Authors";
+import Accessories from "./components/Accessory/Accessories";
+import AddAccessory from "./components/Accessory/AddAccessory"
+import AccessoryDetail from "./components/Accessory/AccessoryDetail";
+import Authors from "./components/Author/Authors";
+import AddAuthor from "./components/Author/AddAuthor";
+import AuthorDetail from "./components/Author/AuthorDetail";
 import Events from "./components/pages/Events";
 import Home from "./components/pages/Home";
 import Books from "./components/Book/Books";
@@ -31,6 +35,8 @@ function App() {
       <Routes>
         <Route exact path='/' element ={<Home />}/>
         <Route exact path='/accessories' element ={<Accessories />}/>
+        <Route exact path='/addaccessory' element ={<AddAccessory />}/>
+        <Route exact path='/accessories/:id' element ={<AccessoryDetail />}/>
         <Route exact path='/authors' element ={<Authors />}/>
         <Route exact path='/events' element ={<Events/>}/>
         <Route exact path='/books' element ={<Books />}/>
@@ -41,6 +47,8 @@ function App() {
         <Route exact path='/LogedIn' element ={<LogedIn />}/>
         <Route exact path='/register' element ={<Register/>}/>
         <Route exact path='/addbook' element ={<AddBook/>}/>
+        <Route exact path='/addauthor' element ={<AddAuthor/>}/>
+        <Route exact path='/authors/:id' element ={<AuthorDetail/>}/>
         <Route exact path='/books/:id' element ={<BookDetail/>}/>
         <Route exact path='/aladdbook' element ={<AlAddBook/>}/>
         <Route exact path='/booksinalbanian/:id' element ={<AlBookDetail/>}/>
